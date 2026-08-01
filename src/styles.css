@@ -1363,3 +1363,13 @@ textarea.col-in { min-height: 54px; resize: vertical; line-height: 1.5; }
 .wl-done { text-align: center; padding: 8px 0; }
 .wl-done h3 { margin-top: 0; }
 .wl-check { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 30px; background: linear-gradient(135deg,#12b981,#0ea5e9); box-shadow: 0 12px 30px -10px rgba(18,185,129,.6); }
+
+/* ============================================================================
+   Section snap — landing scrolls section-to-section instead of continuously.
+   'proximity' snaps to a section when you settle near it, but still lets you
+   read the taller sections freely (mandatory would trap them).
+   ========================================================================== */
+@media (min-width: 640px) {
+  html { scroll-snap-type: y proximity; scroll-padding-top: 0; }
+  .lp > section, .lp > footer, .lp-foot { scroll-snap-align: start; scroll-snap-stop: always; }
+}
