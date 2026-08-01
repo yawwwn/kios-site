@@ -1,10 +1,33 @@
 import React, { useState } from 'react'
 
-// ── Waitlist capture ─────────────────────────────────────────────────────────
-// To actually collect signups (email → your inbox / a sheet), create a free form
-// at https://formspree.io (or https://getform.io) and paste its endpoint below.
-// Until then the form still confirms to the visitor, but nothing is stored.
-const FORM_ENDPOINT = '' // e.g. 'https://formspree.io/f/abcdwxyz'
+// ── Waitlist capture → Firebase Firestore (via lightweight REST, no SDK) ──────
+// Fill these from Firebase console → Project settings → General:
+//   projectId  = "Project ID"
+//   apiKey     = "Web API Key"
+// Signups are written to the `waitlist` collection (secured by Firestore rules:
+// create-only, no public read). Until filled, the form still confirms but stores
+// nothing.
+const FIREBASE = {
+  projectId: '', // e.g. 'mykios-1a2b3'
+  apiKey: '',    // e.g. 'AIzaSy...'
+}
+
+async function saveSignup({ email, handle }) {
+  if (!FIREBASE.projectId || !FIREBASE.apiKey) return
+  const url = `https://firestore.googleapis.com/v1/projects/${FIREBASE.projectId}/databases/(default)/documents/waitlist?key=${FIREBASE.apiKey}`
+  await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      fields: {
+        email: { stringValue: email },
+        handle: { stringValue: handle || '' },
+        source: { stringValue: 'kios-landing' },
+        ts: { timestampValue: new Date().toISOString() },
+      },
+    }),
+  })
+}
 
 export default function Waitlist({ onClose }) {
   const [email, setEmail] = useState('')
@@ -17,14 +40,8 @@ export default function Waitlist({ onClose }) {
     if (!email) return
     setBusy(true)
     try {
-      if (FORM_ENDPOINT) {
-        await fetch(FORM_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ email, handle, source: 'kios-landing' }),
-        })
-      }
-    } catch (_) { /* still confirm to the visitor */ }
+      await saveSignup({ email, handle })
+    } catch (_) { /* still confirm to the visitor even if the write fails */ }
     setBusy(false)
     setDone(true)
   }

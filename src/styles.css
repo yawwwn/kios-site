@@ -1371,5 +1371,9 @@ textarea.col-in { min-height: 54px; resize: vertical; line-height: 1.5; }
    ========================================================================== */
 @media (min-width: 640px) {
   html { scroll-snap-type: y proximity; scroll-padding-top: 0; }
-  .lp > section, .lp > footer, .lp-foot { scroll-snap-align: start; scroll-snap-stop: always; }
+  /* Snap every section EXCEPT the hero — the hero sits below the floating nav,
+     so snapping it to top:0 hides the nav and the page appears to auto-scroll
+     down whenever you try to rest at the top. Excluding it makes the very top
+     (nav visible) a valid resting position. */
+  .lp > section:not(.lp-hero), .lp > footer, .lp-foot { scroll-snap-align: start; scroll-snap-stop: always; }
 }
