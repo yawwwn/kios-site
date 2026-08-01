@@ -5,7 +5,7 @@ export default function Landing({ onClaim, onLogin }) {
   return (
     <div className="lp">
       <nav className="lp-nav">
-        <img className="lp-logo" src="/brand/kios-brand.svg" alt="Kios" />
+        <img className="lp-logo" src="brand/kios-brand.svg" alt="Kios" />
         <div className="lp-nav-links">
           <a className="lp-pill-nav" href="#for-creators">FOR CREATORS +</a>
           <a href="#pricing">Pricing</a>
@@ -33,7 +33,7 @@ export default function Landing({ onClaim, onLogin }) {
               <div className="lp-phone-pp">S$24.90</div>
             </div>
           </div>
-          <div className="lp-chip lp-chip-cal"><span className="lp-chip-cal-ic"><img src="/brand/lp-calendar-check.svg" alt="" /></span><div><b>Booking Confirmed</b><div className="lp-chip-cal-when">Apr 12 · 2:00 PM</div></div></div>
+          <div className="lp-chip lp-chip-cal"><span className="lp-chip-cal-ic"><img src="brand/lp-calendar-check.svg" alt="" /></span><div><b>Booking Confirmed</b><div className="lp-chip-cal-when">Apr 12 · 2:00 PM</div></div></div>
           <div className="lp-chip lp-chip-rev">💰 <b>S$1,240 this month</b></div>
           <div className="lp-chip lp-chip-course">🎓 <b>Course sold · S$129</b></div>
           <div className="lp-chip lp-chip-pay"><i className="lp-chip-dot" /><b>PayNow success · S$49.00</b></div>
@@ -141,7 +141,7 @@ export default function Landing({ onClaim, onLogin }) {
         <p className="lp-section-sub">Your audience is already on Telegram. Now give them a checkout experience, automated delivery, and broadcast tools - all connected to your stall.</p>
         <div className="lp-tg-app">
           <div className="lp-tg-top">
-            <div className="lp-tg-brand"><img src="/brand/kios-logo.svg" alt="" className="lp-tg-mark" /><b>KIOS</b></div>
+            <div className="lp-tg-brand"><img src="brand/kios-logo.svg" alt="" className="lp-tg-mark" /><b>KIOS</b></div>
             <div className="lp-tg-icons"><span>🔍</span><span>🔔</span></div>
           </div>
           <div className="lp-tg-rows">
@@ -252,7 +252,7 @@ export default function Landing({ onClaim, onLogin }) {
       </section>
 
       <footer className="lp-foot">
-        <div className="lp-foot-brand"><img className="lp-logo" src="/brand/kios-brand.svg" alt="Kios" /><span>Made in Singapore 🇸🇬</span></div>
+        <div className="lp-foot-brand"><img className="lp-logo" src="brand/kios-brand.svg" alt="Kios" /><span>Made in Singapore 🇸🇬</span></div>
         <div className="lp-foot-cols">
           <div><b>Platform</b><a href="#for-creators">About Us</a><a href="#pricing">Pricing</a><a href="mailto:hello@kios.shop?subject=Careers%20at%20Kios">Careers</a></div>
           <div><b>Legal</b><a>Terms of Service</a><a>Privacy Policy</a></div>
@@ -264,8 +264,8 @@ export default function Landing({ onClaim, onLogin }) {
 }
 
 const FEATURES = [
-  { i: '/brand/lp-globe.svg', t: 'Your own storefront (kios.shop/@you)', d: 'A beautifully responsive, fast-loading digital link-in-bio page built specifically for Singapore\'s private tutors and content creators.' },
-  { i: '/brand/lp-book-open.svg', t: 'Sell courses, notes & digital products', d: 'Upload masterclasses, revision sheets, or mock exams. We secure your PDFs with automated dynamic buyer-identity watermarking.' },
-  { i: '/brand/lp-users.svg', t: 'Collect contacts & broadcast to parents', d: 'Never lose an audience to algorithm shifts. Gather emails and phone numbers cleanly, with custom filter groups ready for updates.' },
-  { i: '/brand/lp-zap.svg', t: 'PayNow auto-collection (coming soon)', d: 'Accept seamless PayNow QR payments automatically. Students register, pay, and get their files in seconds with zero admin required.' },
+  { i: 'brand/lp-globe.svg', t: 'Your own storefront (kios.shop/@you)', d: 'A beautifully responsive, fast-loading digital link-in-bio page built specifically for Singapore\'s private tutors and content creators.' },
+  { i: 'brand/lp-book-open.svg', t: 'Sell courses, notes & digital products', d: 'Upload masterclasses, revision sheets, or mock exams. We secure your PDFs with automated dynamic buyer-identity watermarking.' },
+  { i: 'brand/lp-users.svg', t: 'Collect contacts & broadcast to parents', d: 'Never lose an audience to algorithm shifts. Gather emails and phone numbers cleanly, with custom filter groups ready for updates.' },
+  { i: 'brand/lp-zap.svg', t: 'PayNow auto-collection (coming soon)', d: 'Accept seamless PayNow QR payments automatically. Students register, pay, and get their files in seconds with zero admin required.' },
 ]
