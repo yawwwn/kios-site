@@ -8,8 +8,8 @@ import React, { useState } from 'react'
 // create-only, no public read). Until filled, the form still confirms but stores
 // nothing.
 const FIREBASE = {
-  projectId: '', // e.g. 'mykios-1a2b3'
-  apiKey: '',    // e.g. 'AIzaSy...'
+  projectId: 'gistread-38d41',
+  apiKey: 'AIzaSyDTOJJTpA6Jh5g-IG0_rItL4RmcDUMob7k',
 }
 
 async function saveSignup({ email, handle }) {

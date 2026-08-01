@@ -62,7 +62,10 @@ body {
   margin: 0;
   font-family: var(--sans);
   color: var(--ink);
-  background: var(--bg);
+  /* Standalone dark landing: keep the page background dark so the floating
+     nav's collapsed top margin (and any overscroll bounce) never reveals a
+     white band above the .lp canvas. */
+  background: var(--canvas);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
